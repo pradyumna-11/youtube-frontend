@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch</title>
+
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../styles/watch.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="watch-container">
+
+        <div class="video-section">
+
+
+            <div class="video-player">
+
+                <img id="videoThumbnail">
+
+                <div class="play-btn">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+            </div>
+
+
+            <h4 id="videoTitle" class="video-title"></h4>
+
+
+            <div class="video-meta">
+                <span id="videoViews"></span>
+
+                <div class="actions">
+                    <span id="likeBtn" onclick="toggleLike()">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                        <span id="likeCount"></span>
+                    </span>
+
+                    <span id="dislikeBtn" onclick="toggleDislike()">
+                        <i class="fa-solid fa-thumbs-down"></i>
+                    </span>
+                    <span><i class="fa-solid fa-share"></i></span>
+                    <span><i class="fa-solid fa-download"></i></span>
+                </div>
+            </div>
+
+
+            <div class="channel-section">
+
+                <div class="channel-left">
+                    <img src="https://randomuser.me/api/portraits/men/5.jpg" class="channel-avatar">
+
+                    <div>
+                        <p id="channelName" class="channel-name"></p>
+                        <span class="subs">1M subscribers</span>
+                    </div>
+                </div>
+
+                <div class="channel-right">
+                    <button id="subscribeBtn" onclick="toggleSubscribe()">Subscribe</button>
+
+                    <div class="notif" id="notifWrapper" style="display: none;">
+                        <i class="fa-solid fa-bell"></i>
+
+                        <div class="notif-menu">
+                            <p>All</p>
+                            <p>Personalized</p>
+                            <p>None</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="comments">
+                <h5>Comments</h5>
+
+                <div class="comment-input">
+                    <input type="text" id="commentText" placeholder="Add a comment...">
+                    <button onclick="addComment()">Comment</button>
+                </div>
+
+                <div id="commentList"></div>
+
+                <div class="comment">Great video!</div>
+                <div class="comment">Very helpful 🔥</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="../app.js"></script>
+    <script src="../watch.js"></script>
+
+</body>
+
+</html>

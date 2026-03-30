@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YouTube UI Clone</title>
+
+    <link rel="icon" href="https://www.youtube.com/s/desktop/fe3c0f3e/img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../index.css">
+
+</head>
+
+<body>
+    <script src="../auth.js"></script>
+    <script>
+        checkAuth();
+    </script>
+    <nav class="navbar navbar-light bg-white shadow-sm px-3 fixed-top">
+
+        <div class="nav-left">
+
+            <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i>
+
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg">
+
+        </div>
+
+
+        <div class="search-bar">
+
+            <div class="search-container">
+
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+                <input type="text" placeholder="Search" id="searchInput" oninput="applySearch('history')">
+
+            </div>
+
+        </div>
+
+
+        <div class="icons">
+
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-right-from-bracket" onclick="logout()"></i>
+
+        </div>
+
+    </nav>
+
+    <div class="container-fluid main-layout">
+
+        <div class="sidebar">
+
+            <a href="../index.html" class="menu-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="./trending.html" class="menu-item">
+                <i class="fa-solid fa-fire"></i>
+                <span>Trending</span>
+            </a>
+
+            <a href="./subscriptions.html" class="menu-item">
+                <i class="fa-solid fa-tv"></i>
+                <span>Subscriptions</span>
+            </a>
+
+            <a href="history.html" class="menu-item active">
+                <i class="fa-solid fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="./liked_videos.html" class="menu-item">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <span>Liked Videos</span>
+            </a>
+
+        </div>
+
+        <div class="content-area">
+
+            <h4 class="section-title mb-4">⏱ Watch History</h4>
+
+            <div class="row g-4" id="videoContainer">
+
+                <!-- <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="video-card">
+
+                        <div class="thumbnail">
+                            <a href="https://youtube.com" target="_blank">
+                            <img src="https://i.ytimg.com/vi/W6NZfCO5SIk/maxresdefault.jpg">
+                            </a>
+                            <span class="video-time">10:30</span>
+                        </div>
+
+                        <div class="video-info">
+
+                            <img class="channel-icon" src="https://randomuser.me/api/portraits/men/3.jpg">
+
+                            <div>
+                                <h6>JavaScript Basics</h6>
+                                <p>Programming with Mosh</p>
+                                <span>Watched yesterday</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="video-card">
+
+                        <div class="thumbnail">
+                            <a href="https://youtube.com" target="_blank">
+                            <img src="https://i.ytimg.com/vi/pQN-pnXPaVg/maxresdefault.jpg">
+                            </a>
+                            <span class="video-time">14:10</span>
+                        </div>
+
+                        <div class="video-info">
+
+                            <img class="channel-icon" src="https://randomuser.me/api/portraits/men/6.jpg">
+
+                            <div>
+                                <h6>Git & GitHub Tutorial</h6>
+                                <p>Code Basics</p>
+                                <span>Watched 2 days ago</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div> -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mobile-footer">
+
+        <a href="../index.html" class="footer-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="./trending.html" class="footer-item">
+            <i class="fa-solid fa-fire"></i>
+            <span>Trending</span>
+        </a>
+
+        <a href="./subscriptions.html" class="footer-item">
+            <i class="fa-solid fa-tv"></i>
+            <span>Subscriptions</span>
+        </a>
+
+        <a href="./liked_videos.html" class="footer-item">
+            <i class="fa-solid fa-thumbs-up"></i>
+            <span>Liked</span>
+        </a>
+
+        <a href="history.html" class="footer-item active">
+            <i class="fa-solid fa-clock"></i>
+            <span>History</span>
+        </a>
+
+        <a href="../index.html" class="footer-item">
+            <i class="fa-solid fa-user"></i>
+            <span>You</span>
+        </a>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../app.js"></script>
+    <script>
+        loadVideos();
+
+        const history = JSON.parse(localStorage.getItem("history")) || [];
+
+        renderVideos(history);
+    </script>
+</body>
+
+</html>

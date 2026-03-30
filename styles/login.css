@@ -1,0 +1,101 @@
+body {
+    background: linear-gradient(135deg, #ff0000, #0d4056);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+}
+
+/* card */
+
+.auth-box {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* logo */
+
+.auth-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+/* inputs */
+
+.input-group {
+    position: relative;
+    margin: 12px 0;
+}
+
+.input-group i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    max-width: -webkit-fill-available;
+}
+
+.input-group input:focus {
+    border-color: #ff0000;
+}
+
+/* button */
+
+.auth-box button {
+    width: 100%;
+    padding: 10px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-box button:hover {
+    background: #cc0000;
+}
+
+/* error */
+
+.error {
+    color: red;
+    font-size: 13px;
+    text-align: left;
+    margin-top: 5px;
+    display: none;
+}
+
+/* link */
+
+.auth-box a {
+    color: #ff0000;
+    text-decoration: none;
+}
